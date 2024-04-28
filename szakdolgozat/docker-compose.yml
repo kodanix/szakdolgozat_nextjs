@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  learn-programming-db:
+    image: postgres
+    restart: always
+    container_name: learn-programming-db
+    ports:
+      - "5432:5433"
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+
+volumes:
+  postgres:
