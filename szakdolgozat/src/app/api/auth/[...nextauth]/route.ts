@@ -4,7 +4,7 @@ import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "@/db";
 import type { Adapter } from "next-auth/adapters";
 
-export const { handler, auth, signIn, signOut } = NextAuth({
+export const handler = NextAuth({
   adapter: DrizzleAdapter(db) as Adapter,
   providers: [
     GoogleProvider({
